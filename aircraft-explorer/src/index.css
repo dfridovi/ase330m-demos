@@ -219,6 +219,61 @@ legend {
   width: 100%;
 }
 
+.mode-table-note {
+  margin: 8px 0 0;
+  padding: 6px 10px;
+  background: var(--surface-2);
+  border-left: 3px solid var(--border);
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.mode-table-note strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.mode-table-note em {
+  color: var(--text-secondary);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.mode-table-warning {
+  margin-top: 8px;
+  border-left-color: var(--accent);
+  color: var(--text-secondary);
+}
+
+.mode-table-warning strong {
+  color: var(--text-primary);
+}
+
+.has-tooltip {
+  cursor: help;
+}
+
+.header-tooltip {
+  position: fixed;
+  width: 260px;
+  padding: 6px 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 11px;
+  font-variant-numeric: normal;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  pointer-events: none;
+}
+
 /* Charts */
 .chart-panel {
   background: var(--surface-2);
