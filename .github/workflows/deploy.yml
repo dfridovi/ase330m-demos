@@ -1,0 +1,64 @@
+name: Deploy demos to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # One block per demo. Each demo is an independent Vite app with its own
+      # package.json; its vite.config.ts base must be set to
+      # /ase330m-demos/<demo-folder>/ so built asset URLs resolve correctly
+      # under the project Pages subpath.
+      - name: Build aircraft-explorer
+        working-directory: aircraft-explorer
+        run: |
+          npm ci
+          npm run build
+
+      # Add new demos here, e.g.:
+      # - name: Build cw-dynamics
+      #   working-directory: cw-dynamics
+      #   run: |
+      #     npm ci
+      #     npm run build
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r aircraft-explorer/dist _site/aircraft-explorer
+          # Add new demos here, e.g.:
+          # cp -r cw-dynamics/dist _site/cw-dynamics
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
