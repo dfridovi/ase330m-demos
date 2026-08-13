@@ -3,9 +3,6 @@
 Student-facing interactive web demos for ASE 330M (linear systems for aerospace engineering).
 Deployed via GitHub Pages at <https://dfridovi.github.io/ase330m-demos/>.
 
-This is a separate, public repo from the course's main repo (which holds MATLAB scripts and
-other instructor-facing material) specifically so students only ever see what's meant for them.
-
 ## Layout
 
 Each demo is an independent app in its own top-level folder, e.g. `aircraft-explorer/`. The
