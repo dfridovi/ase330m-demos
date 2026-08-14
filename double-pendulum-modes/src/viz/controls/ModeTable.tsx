@@ -61,7 +61,8 @@ export function ModeTable() {
       <p className="mode-table-note">
         <strong>Why exactly two modes, both undamped?</strong> This is a conservative,
         frictionless linearization (2 degrees of freedom → 2 pairs of purely imaginary
-        eigenvalues), so ζ = 0 for both modes always — nothing here ever decays. Mode 1 is
+        eigenvalues), so the damping ratio ζ = 0 for both modes always — nothing here ever
+        decays. Mode 1 is
         always the slower, <em>in-phase</em> swing (both pendulums move the same direction);
         Mode 2 is always the faster, <em>anti-phase</em> swing (they move opposite directions).
         Any initial condition you release the pendulum from is just some mixture of these two

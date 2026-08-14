@@ -119,7 +119,7 @@ legend {
   grid-area: bottom;
   background: var(--surface);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
   padding: 12px;
   max-height: 340px;
@@ -309,8 +309,30 @@ legend {
 
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+}
+
+.chart-note {
+  margin: 8px 0 0;
+  padding: 6px 10px;
+  background: var(--surface-2);
+  border-left: 3px solid var(--border);
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.chart-note strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.chart-note em {
+  color: var(--text-secondary);
+  font-style: normal;
+  font-weight: 500;
 }
 
 /* Playback controls */

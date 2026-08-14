@@ -2,6 +2,8 @@ import { usePendulumStore } from '../../store/pendulumStore.ts';
 import { Slider } from './Slider.tsx';
 
 const GRAVITY_HINT = 'Moon 1.6 · Earth 9.81 · Jupiter 24.8 (m/s²)';
+const MASS_HINT = 'Bob 1 is the top bob (attached directly to the pivot); Bob 2 is the bottom bob (hangs from Bob 1).';
+const ROD_HINT = 'Rod 1 links the pivot to Bob 1 (top); Rod 2 links Bob 1 to Bob 2 (bottom).';
 
 export function ParamSliders() {
   const params = usePendulumStore((s) => s.physicalParams);
@@ -31,6 +33,7 @@ export function ParamSliders() {
           formatValue={(v) => v.toFixed(1)}
           onChange={(v) => setParam('m2', v)}
         />
+        <p className="input-hint">{MASS_HINT}</p>
       </fieldset>
 
       <fieldset>
@@ -55,6 +58,7 @@ export function ParamSliders() {
           formatValue={(v) => v.toFixed(2)}
           onChange={(v) => setParam('l2', v)}
         />
+        <p className="input-hint">{ROD_HINT}</p>
       </fieldset>
 
       <fieldset>

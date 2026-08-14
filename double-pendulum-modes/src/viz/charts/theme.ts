@@ -10,3 +10,9 @@ export const AXIS = '#383835';
 export const SERIES_FULL = '#ffffff'; // the actual (full) response — drawn like the MATLAB demo's black trace
 export const SERIES_MODE_1 = '#3987e5'; // slow, in-phase mode (blue)
 export const SERIES_MODE_2 = '#d95926'; // fast, anti-phase mode (orange)
+
+// Energy chart: distinct from the mode colors above (different entities), continuing the
+// same validated categorical order (slots 3-4) rather than reusing slots 1-2's blue/orange.
+export const SERIES_KINETIC = '#199e70'; // aqua
+export const SERIES_POTENTIAL = '#c98500'; // yellow
+export const SERIES_TOTAL = SERIES_FULL; // headline trace, same convention as "Full" above
