@@ -34,6 +34,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build double-pendulum-modes
+        working-directory: double-pendulum-modes
+        run: |
+          npm ci
+          npm run build
+
       # Add new demos here, e.g.:
       # - name: Build cw-dynamics
       #   working-directory: cw-dynamics
@@ -46,6 +52,7 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp -r aircraft-explorer/dist _site/aircraft-explorer
+          cp -r double-pendulum-modes/dist _site/double-pendulum-modes
           # Add new demos here, e.g.:
           # cp -r cw-dynamics/dist _site/cw-dynamics
 
