@@ -40,12 +40,11 @@ jobs:
           npm ci
           npm run build
 
-      # Add new demos here, e.g.:
-      # - name: Build cw-dynamics
-      #   working-directory: cw-dynamics
-      #   run: |
-      #     npm ci
-      #     npm run build
+      - name: Build cw-dynamics
+        working-directory: cw-dynamics
+        run: |
+          npm ci
+          npm run build
 
       - name: Assemble site
         run: |
@@ -53,8 +52,7 @@ jobs:
           cp index.html _site/
           cp -r aircraft-explorer/dist _site/aircraft-explorer
           cp -r double-pendulum-modes/dist _site/double-pendulum-modes
-          # Add new demos here, e.g.:
-          # cp -r cw-dynamics/dist _site/cw-dynamics
+          cp -r cw-dynamics/dist _site/cw-dynamics
 
       - uses: actions/upload-pages-artifact@v3
         with:
