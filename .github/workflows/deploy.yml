@@ -46,6 +46,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build car-shocks
+        working-directory: car-shocks
+        run: |
+          npm ci
+          npm run build
+
       - name: Assemble site
         run: |
           mkdir -p _site
@@ -53,6 +59,7 @@ jobs:
           cp -r aircraft-explorer/dist _site/aircraft-explorer
           cp -r double-pendulum-modes/dist _site/double-pendulum-modes
           cp -r cw-dynamics/dist _site/cw-dynamics
+          cp -r car-shocks/dist _site/car-shocks
 
       - uses: actions/upload-pages-artifact@v3
         with:
