@@ -36,6 +36,19 @@
       color: var(--text-muted);
       margin: 0 0 32px;
     }
+    h2.group-title {
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 32px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2.group-title:first-of-type {
+      margin-top: 0;
+    }
     ul.demos {
       list-style: none;
       margin: 0;
@@ -71,6 +84,7 @@
   <main>
     <h1>ASE 330M Demos</h1>
     <p class="subtitle">Interactive tools for linear systems in aerospace engineering.</p>
+    <h2 class="group-title">Modal decomposition</h2>
     <ul class="demos">
       <li>
         <a class="demo-card" href="./aircraft-explorer/">
@@ -98,6 +112,20 @@
             Adjust a chaser satellite's initial relative position and velocity and watch its
             motion relative to a chief in orbit — a drifting or closed 2:1 ellipse, plus a
             decoupled cross-track oscillation at the same frequency.
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <h2 class="group-title">Forced response</h2>
+    <ul class="demos">
+      <li>
+        <a class="demo-card" href="./car-shocks/">
+          <div class="demo-title">Quarter-Car Forced Response</div>
+          <div class="demo-desc">
+            A mechanic pushes on the hood to test the shocks: adjust spring stiffness and
+            damping on a forced spring-mass-damper and compare its step, impulse, and
+            frequency response, all tracing back to the same eigenvalues of the state matrix.
           </div>
         </a>
       </li>

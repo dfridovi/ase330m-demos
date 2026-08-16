@@ -16,7 +16,8 @@ root `index.html` is a simple static landing page linking to each one.
    `/ase330m-demos/<folder-name>/` — the site is served under a subpath
    (`https://dfridovi.github.io/ase330m-demos/`), not the domain root, so asset URLs need
    that prefix.
-3. Add a link to it in the root `index.html`.
+3. Add a link to it in the root `index.html`, under the appropriate topic group's `<ul
+   class="demos">` (or add a new `<h2 class="group-title">` section if it starts a new topic).
 4. Add a build step for it in `.github/workflows/deploy.yml` (a build-and-copy-into-`_site`
    block per demo — follow the `aircraft-explorer` block as a template).
 5. Push to `main` — the workflow builds every demo and redeploys the whole site.
