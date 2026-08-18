@@ -52,6 +52,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build flight-control
+        working-directory: flight-control
+        run: |
+          npm ci
+          npm run build
+
       - name: Assemble site
         run: |
           mkdir -p _site
@@ -60,6 +66,7 @@ jobs:
           cp -r double-pendulum-modes/dist _site/double-pendulum-modes
           cp -r cw-dynamics/dist _site/cw-dynamics
           cp -r car-shocks/dist _site/car-shocks
+          cp -r flight-control/dist _site/flight-control
 
       - uses: actions/upload-pages-artifact@v3
         with:
