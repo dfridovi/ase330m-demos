@@ -58,6 +58,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build satellite-docking
+        working-directory: satellite-docking
+        run: |
+          npm ci
+          npm run build
+
       - name: Assemble site
         run: |
           mkdir -p _site
@@ -67,6 +73,7 @@ jobs:
           cp -r cw-dynamics/dist _site/cw-dynamics
           cp -r car-shocks/dist _site/car-shocks
           cp -r flight-control/dist _site/flight-control
+          cp -r satellite-docking/dist _site/satellite-docking
 
       - uses: actions/upload-pages-artifact@v3
         with:
